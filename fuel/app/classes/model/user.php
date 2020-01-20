@@ -1,8 +1,14 @@
 <?php
+
 use Orm\Model;
 
 class Model_User extends Model
 {
+	/**
+	 * @var string  $_name
+	 */
+	public static $_name = 'user';
+
 	/**
 	 * @var array  $_properties
 	 */
