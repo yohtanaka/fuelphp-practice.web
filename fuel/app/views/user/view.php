@@ -2,10 +2,12 @@
 
 <p>
 	<strong>Name:</strong>
-	<?php echo $user->name; ?></p>
+	<?php echo $user->name; ?>
+</p>
 <p>
 	<strong>Email:</strong>
-	<?php echo $user->email; ?></p>
+	<?php echo $user->email; ?>
+</p>
 
 <?php echo Html::anchor('user/edit/'.$user->id, 'Edit'); ?> |
 <?php echo Html::anchor('user', 'Back'); ?>

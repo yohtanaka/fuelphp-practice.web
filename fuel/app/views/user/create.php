@@ -3,5 +3,4 @@
 
 <?php echo render('user/_form'); ?>
 
-
 <p><?php echo Html::anchor('user', 'Back'); ?></p>
