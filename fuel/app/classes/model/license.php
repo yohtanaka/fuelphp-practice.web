@@ -2,12 +2,12 @@
 
 use Orm\Model;
 
-class Model_User extends Model
+class Model_License extends Model
 {
 	/**
 	 * @var string  $_name
 	 */
-	public static $_name = 'user';
+	public static $_name = 'license';
 
 	/**
 	 * @var string  $_properties
@@ -15,7 +15,8 @@ class Model_User extends Model
 	protected static $_properties = [
 		'id',
 		'name',
-		'email',
+		'description',
+		'user_id',
 		'created_at',
 		'updated_at',
 	];
@@ -35,10 +36,10 @@ class Model_User extends Model
 	];
 
 	/**
-	 * @var array  $_has_many
+	 * @var array  $_belongs_to
 	 */
-	protected static $_has_many = [
-		'posts',
+	protected static $_belongs_to = [
+		'user',
 	];
 
 	/**
@@ -49,7 +50,8 @@ class Model_User extends Model
 	{
 		$val = Validation::forge($factory);
 		$val->add_field('name', 'Name', 'required|max_length[255]');
-		$val->add_field('email', 'Email', 'required|valid_email|max_length[255]');
+		$val->add_field('description', 'Description', 'required');
+		$val->add_field('user_id', 'User Id', 'required|valid_string[numeric]');
 
 		return $val;
 	}

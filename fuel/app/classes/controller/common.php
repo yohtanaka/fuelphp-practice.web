@@ -17,6 +17,16 @@ class Controller_Common extends Controller_Template
 	}
 
 	/**
+	 * @param  string  $path
+	 * @param  array|null  $$data
+	 * @return void
+	 */
+	public function view($path, $data = null)
+	{
+		$this->template->content = View::forge($path, $data);
+	}
+
+	/**
 	 * @param  Model  $object
 	 * @return void
 	 */

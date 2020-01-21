@@ -1,8 +1,8 @@
 <?php
 
-use Model_User as User;
+use Model_License as License;
 
-class Controller_User extends Controller_Common
+class Controller_License extends Controller_Common
 {
 	/**
 	 * @return void
@@ -10,7 +10,7 @@ class Controller_User extends Controller_Common
 	public function before()
 	{
 		parent::before();
-		$this->template->title = 'Users';
+		$this->template->title = 'Licenses';
 	}
 
 	/**
@@ -18,8 +18,8 @@ class Controller_User extends Controller_Common
 	 */
 	public function action_index()
 	{
-		$data['users'] = User::find('all');
-		$this->view('user/index', $data);
+		$data['licenses'] = License::find('all');
+		$this->view('license/index', $data);
 	}
 
 	/**
@@ -28,8 +28,8 @@ class Controller_User extends Controller_Common
 	 */
 	public function action_view($id = null)
 	{
-		$data['user'] = User::find($id);
-		$this->view('user/view', $data);
+		$data['license'] = License::find($id);
+		$this->view('license/view', $data);
 	}
 
 	/**
@@ -37,8 +37,8 @@ class Controller_User extends Controller_Common
 	 */
 	public function action_create()
 	{
-		$this->create(new User);
-		$this->view('user/create');
+		$this->create(new License);
+		$this->view('license/create');
 	}
 
 	/**
@@ -47,8 +47,8 @@ class Controller_User extends Controller_Common
 	 */
 	public function action_edit($id = null)
 	{
-		$this->edit(User::find($id));
-		$this->view('user/edit');
+		$this->edit(License::find($id));
+		$this->view('license/edit');
 	}
 
 	/**
@@ -57,6 +57,6 @@ class Controller_User extends Controller_Common
 	 */
 	public function action_delete($id = null)
 	{
-		$this->delete(User::find($id));
+		$this->delete(License::find($id));
 	}
 }
