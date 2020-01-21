@@ -13,6 +13,11 @@
 // Bootstrap the framework - THIS LINE NEEDS TO BE FIRST!
 require COREPATH.'bootstrap.php';
 
+// Read helper files here
+foreach (glob(APPPATH.'helpers/*.php') as $helper) {
+    require_once($helper);
+}
+
 // Add framework overload classes here
 \Autoloader::add_classes(array(
 	// Example: 'View' => APPPATH.'classes/myview.php',
