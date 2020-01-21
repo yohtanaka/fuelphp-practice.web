@@ -6,6 +6,7 @@
 		<tr>
 			<th>Name</th>
 			<th>Email</th>
+			<th>Licenses</th>
 			<th>&nbsp;</th>
 		</tr>
 	</thead>
@@ -14,6 +15,11 @@
 		<tr>
 			<td><?php echo $user->name; ?></td>
 			<td><?php echo $user->email; ?></td>
+			<td>
+				<?php foreach ($user->licenses as $license): ?>
+				<p><?php echo Html::anchor('license/view/'.$license->id, $license->name); ?></p>
+				<?php endforeach; ?>
+			</td>
 			<td>
 				<div class="btn-toolbar">
 					<div class="btn-group">

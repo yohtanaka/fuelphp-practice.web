@@ -18,7 +18,7 @@ class Controller_User extends Controller_Common
 	 */
 	public function action_index()
 	{
-		$data['users'] = User::find('all');
+		$data['users'] = User::find('all', ['related' => 'licenses']);
 		$this->view('user/index', $data);
 	}
 

@@ -38,7 +38,7 @@ class Model_User extends Model
 	 * @var array  $_has_many
 	 */
 	protected static $_has_many = [
-		'posts',
+		'licenses',
 	];
 
 	/**
